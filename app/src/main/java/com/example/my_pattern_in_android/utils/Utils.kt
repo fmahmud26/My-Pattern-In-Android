@@ -5,6 +5,8 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import com.example.my_pattern_in_android.App
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
 object Utils {
 

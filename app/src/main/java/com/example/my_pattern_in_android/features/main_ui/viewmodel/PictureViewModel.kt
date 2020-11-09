@@ -4,14 +4,19 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.my_pattern_in_android.App
 import com.example.my_pattern_in_android.features.main_ui.model.PictureRepository
 import com.example.my_pattern_in_android.features.main_ui.model.data_class.MyPictures
 import com.example.my_pattern_in_android.utils.Resource
+import com.example.my_pattern_in_android.utils.Utils
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
 
-class PictureViewModel @ViewModelInject constructor(private val repository: PictureRepository) :
+class PictureViewModel @ViewModelInject constructor(
+    private val repository: PictureRepository,
+) :
     ViewModel() {
 
     val picsData: MutableLiveData<Resource<List<MyPictures>>> = MutableLiveData()
@@ -48,10 +53,6 @@ class PictureViewModel @ViewModelInject constructor(private val repository: Pict
                 else -> picsData.postValue(Resource.Error("Some error occurred"))
             }
         }
-    }
-
-    private fun getValue(): Boolean {
-        return true
     }
 
 
