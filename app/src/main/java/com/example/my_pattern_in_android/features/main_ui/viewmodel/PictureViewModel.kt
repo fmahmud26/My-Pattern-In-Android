@@ -13,6 +13,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
+import javax.inject.Inject
 
 class PictureViewModel @ViewModelInject constructor(
     private val repository: PictureRepository,
@@ -20,7 +21,6 @@ class PictureViewModel @ViewModelInject constructor(
     ViewModel() {
 
     val picsData: MutableLiveData<Resource<List<MyPictures>>> = MutableLiveData()
-
 
     init {
         getPictures()
@@ -37,16 +37,10 @@ class PictureViewModel @ViewModelInject constructor(
         picsData.postValue(Resource.Loading())
 
         try {
-
-
             val response = repository.getUsers()
-
             picsData.postValue(handlePicsResponse(response))
 
-
         } catch (t: Throwable) {
-
-            println("Network Error ${t.localizedMessage}")
 
             when (t) {
                 is IOException -> picsData.postValue(Resource.Error("Network failure"))

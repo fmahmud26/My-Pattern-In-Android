@@ -8,10 +8,10 @@ import com.example.my_pattern_in_android.App
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-object Utils {
+class Utils @Inject constructor(@ApplicationContext private val context: Context) {
 
-    fun hasInternetConnection(application: App): Boolean {
-        val connectivityManager = application.getSystemService(
+    fun hasInternetConnection(): Boolean {
+        val connectivityManager = context.getSystemService(
             Context.CONNECTIVITY_SERVICE
         ) as ConnectivityManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
