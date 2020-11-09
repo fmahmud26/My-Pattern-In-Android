@@ -17,7 +17,7 @@
         android:theme="@style/Theme.MyPatternInAndroid"
         tools:ignore="HardcodedDebugMode">
         <activity
-            android:name=".features.main_ui.view.MainActivity"
+            android:name=".ui.main_ui.view.MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
             <intent-filter>

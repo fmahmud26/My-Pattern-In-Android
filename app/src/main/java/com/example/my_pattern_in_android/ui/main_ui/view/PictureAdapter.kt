@@ -1,4 +1,4 @@
-package com.example.my_pattern_in_android.features.main_ui.view
+package com.example.my_pattern_in_android.ui.main_ui.view
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.my_pattern_in_android.R
-import com.example.my_pattern_in_android.features.main_ui.model.data_class.MyPictures
+import com.example.my_pattern_in_android.ui.main_ui.model.data_class.MyPictures
 import kotlinx.android.synthetic.main.item_pictures.view.*
 
 class PictureAdapter(private val pictures: List<MyPictures>, private val context: Context) :

@@ -1,19 +1,15 @@
-package com.example.my_pattern_in_android.features.main_ui.viewmodel
+package com.example.my_pattern_in_android.ui.main_ui.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.my_pattern_in_android.App
-import com.example.my_pattern_in_android.features.main_ui.model.PictureRepository
-import com.example.my_pattern_in_android.features.main_ui.model.data_class.MyPictures
+import com.example.my_pattern_in_android.ui.main_ui.model.PictureRepository
+import com.example.my_pattern_in_android.ui.main_ui.model.data_class.MyPictures
 import com.example.my_pattern_in_android.utils.Resource
-import com.example.my_pattern_in_android.utils.Utils
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
-import javax.inject.Inject
 
 class PictureViewModel @ViewModelInject constructor(
     private val repository: PictureRepository,

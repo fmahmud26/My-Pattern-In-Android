@@ -1,4 +1,4 @@
-package com.example.my_pattern_in_android.features.main_ui.view
+package com.example.my_pattern_in_android.ui.main_ui.view
 
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -7,8 +7,8 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.example.my_pattern_in_android.R
 import com.example.my_pattern_in_android.common.BaseActivity
-import com.example.my_pattern_in_android.features.main_ui.model.data_class.MyPictures
-import com.example.my_pattern_in_android.features.main_ui.viewmodel.PictureViewModel
+import com.example.my_pattern_in_android.ui.main_ui.model.data_class.MyPictures
+import com.example.my_pattern_in_android.ui.main_ui.viewmodel.PictureViewModel
 import com.example.my_pattern_in_android.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
