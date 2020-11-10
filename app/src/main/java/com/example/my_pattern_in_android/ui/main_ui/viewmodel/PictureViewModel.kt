@@ -16,7 +16,7 @@ class PictureViewModel @ViewModelInject constructor(
 ) :
     ViewModel() {
 
-    val picsData: MutableLiveData<Resource<List<MyPictures>>> = MutableLiveData()
+    val picLiveData: MutableLiveData<Resource<List<MyPictures>>> = MutableLiveData()
 
     init {
         getPictures()
@@ -30,17 +30,17 @@ class PictureViewModel @ViewModelInject constructor(
 
     private suspend fun fetchPictures() {
 
-        picsData.postValue(Resource.Loading())
+        picLiveData.postValue(Resource.Loading())
 
         try {
             val response = repository.getUsers()
-            picsData.postValue(handlePicsResponse(response))
+            picLiveData.postValue(handlePicsResponse(response))
 
         } catch (t: Throwable) {
 
             when (t) {
-                is IOException -> picsData.postValue(Resource.Error("Network failure"))
-                else -> picsData.postValue(Resource.Error("Some error occurred"))
+                is IOException -> picLiveData.postValue(Resource.Error("Network failure"))
+                else -> picLiveData.postValue(Resource.Error("Some error occurred"))
             }
         }
     }

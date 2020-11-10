@@ -34,7 +34,7 @@ class MainActivity : BaseActivity() {
 
     private fun setLiveDataListener() {
 
-        viewModel.picsData.observe(this, Observer { response ->
+        viewModel.picLiveData.observe(this, Observer { response ->
             when (response) {
 
                 is Resource.Success -> {
