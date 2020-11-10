@@ -1,4 +1,4 @@
-package com.example.my_pattern_in_android.utils
+package com.example.my_pattern_in_android.common
 
 sealed class Resource<T>(
     val data: T? = null,

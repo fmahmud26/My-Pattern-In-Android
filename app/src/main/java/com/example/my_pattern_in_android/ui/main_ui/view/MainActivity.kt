@@ -9,7 +9,7 @@ import com.example.my_pattern_in_android.R
 import com.example.my_pattern_in_android.common.BaseActivity
 import com.example.my_pattern_in_android.ui.main_ui.model.data_class.MyPictures
 import com.example.my_pattern_in_android.ui.main_ui.viewmodel.PictureViewModel
-import com.example.my_pattern_in_android.utils.Resource
+import com.example.my_pattern_in_android.common.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
