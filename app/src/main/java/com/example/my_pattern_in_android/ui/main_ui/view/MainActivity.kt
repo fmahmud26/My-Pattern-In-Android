@@ -9,7 +9,7 @@ import com.example.my_pattern_in_android.R
 import com.example.my_pattern_in_android.common.BaseActivity
 import com.example.my_pattern_in_android.ui.main_ui.model.data_class.MyPictures
 import com.example.my_pattern_in_android.ui.main_ui.viewmodel.PictureViewModel
-import com.example.my_pattern_in_android.common.Resource
+import com.example.my_pattern_in_android.common.Resources
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
@@ -37,17 +37,17 @@ class MainActivity : BaseActivity() {
         viewModel.picLiveData.observe(this, Observer { response ->
             when (response) {
 
-                is Resource.Success -> {
+                is Resources.Success -> {
                     hideLoader()
                     updateUI(response.data)
                 }
 
-                is Resource.Error -> {
+                is Resources.Error -> {
                     hideLoader()
                     response.message?.let { showToast(it) }
                 }
 
-                is Resource.Loading -> {
+                is Resources.Loading -> {
                     showLoader()
                 }
             }
