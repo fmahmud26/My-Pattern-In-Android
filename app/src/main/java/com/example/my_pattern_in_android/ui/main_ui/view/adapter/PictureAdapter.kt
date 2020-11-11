@@ -1,4 +1,4 @@
-package com.example.my_pattern_in_android.ui.main_ui.view
+package com.example.my_pattern_in_android.ui.main_ui.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
